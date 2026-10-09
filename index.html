@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UDES Learning Lab | Centro de Simulación Médica</title>
+    <!-- Favicon profesional integrado -->
+    <link rel="icon" type="image/svg+xml" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/svgs/solid/heart-pulse.svg">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#f8fafc] text-slate-900 antialiased flex flex-col min-h-screen selection:bg-cyan-500 selection:text-white">
+
+    <!-- Header / Navbar Institucional -->
+    <header class="bg-slate-950/90 text-white backdrop-blur-md sticky top-0 z-50 border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3 cursor-pointer group" onclick="volverAlInicio()">
+                <div class="bg-gradient-to-br from-cyan-500 to-indigo-600 p-2.5 rounded-xl text-white shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition">
+                    <i class="fa-solid fa-heart-pulse text-xl"></i>
+                </div>
+                <div>
+                    <span class="font-extrabold text-lg tracking-tight block">UDES Learning Lab</span>
+                    <span class="text-[11px] font-medium tracking-widest uppercase text-cyan-400 block">Medicina • Cúcuta</span>
+                </div>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
+                <a href="#inicio" onclick="volverAlInicio()" class="hover:text-cyan-400 transition">Inicio</a>
+                <a href="#simuladores" onclick="volverAlInicio()" class="hover:text-cyan-400 transition">Simuladores</a>
+                <a href="#realidad-virtual" onclick="volverAlInicio()" class="hover:text-cyan-400 transition">Realidad Virtual</a>
+                <a href="#ubicacion" onclick="volverAlInicio()" class="hover:text-cyan-400 transition">Ubicación</a>
+                <a href="#encuesta" onclick="volverAlInicio()" class="hover:text-cyan-400 transition text-cyan-400 font-semibold">Encuesta</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenedor Principal -->
+    <div id="app-container" class="flex-grow">
+
+        <!-- VISTA DE INICIO -->
+        <div id="view-home">
+            <!-- Hero Section de Alta Gama -->
+            <section class="relative bg-slate-950 text-white py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+                <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                <div class="max-w-4xl mx-auto text-center relative z-10">
+                    <div class="inline-flex items-center gap-2 bg-cyan-500/10 text-cyan-400 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-widest border border-cyan-500/20 mb-6">
+                        <i class="fa-solid fa-shield-halved"></i> Facultad de Ciencias Médicas y de la Salud
+                    </div>
+                    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                        Excelencia y Precisión en <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-400">Simulación Clínica</span>
+                    </h1>
+                    <p class="mt-6 text-lg sm:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto font-light">
+                        Entorno avanzado, controlado y de alta fidelidad para el desarrollo de competencias clínicas, quirúrgicas y de emergencia bajo estrictos estándares de seguridad académica.
+                    </p>
+                    <div class="mt-10 flex flex-wrap justify-center gap-4 text-xs">
+                        <div class="bg-slate-900/90 text-slate-300 px-5 py-3 rounded-xl border border-slate-800 shadow-sm flex items-center gap-2">
+                            <i class="fa-solid fa-user-pen text-cyan-400"></i> <span class="text-slate-400">Autores:</span> <strong class="text-white">Miguelangel Pacheco & Sara Barrera</strong>
+                        </div>
+                        <div class="bg-slate-900/90 text-slate-300 px-5 py-3 rounded-xl border border-slate-800 shadow-sm flex items-center gap-2">
+                            <i class="fa-solid fa-chalkboard-user text-indigo-400"></i> <span class="text-slate-400">Docente:</span> <strong class="text-white">Pedro Antio Jaimes</strong>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+
+                <!-- Introducción Institucional -->
+                <section id="introduccion" class="bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 p-8 sm:p-12 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-50 rounded-full blur-3xl -z-10"></div>
+                    <div class="max-w-3xl mx-auto space-y-6">
+                        <div class="flex items-center gap-3 text-cyan-600 font-semibold text-sm uppercase tracking-wider">
+                            <i class="fa-solid fa-stethoscope"></i> Marco Metodológico
+                        </div>
+                        <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
+                            Introducción a la Simulación Médica
+                        </h2>
+                        <p class="text-slate-600 leading-relaxed text-base">
+                            La simulación médica es una estrategia educativa de vanguardia que busca recrear de manera segura y controlada situaciones clínicas reales. Su propósito fundamental es que los estudiantes desarrollen competencias prácticas y teóricas mediante la práctica deliberada, la repetición de procedimientos y el análisis reflexivo a partir del error formativo.
+                        </p>
+                        <p class="text-slate-600 leading-relaxed text-base">
+                            La visita académica a los laboratorios de simulación en la sede Cúcuta permitió explorar dispositivos de alta tecnología destinados al entrenamiento clínico, facilitando la integración crucial entre los fundamentos teóricos y el entorno real del quirófano y la urgencia.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Listado de Simuladores -->
+                <section id="simuladores" class="space-y-10">
+                    <div class="text-center max-w-2xl mx-auto">
+                        <span class="text-cyan-600 text-xs font-bold uppercase tracking-widest">Infraestructura Tecnológica</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Catálogo de Simuladores Clínicos</h2>
+                        <p class="mt-3 text-slate-500 text-sm sm:text-base">Selecciona cualquier equipo para visualizar su ficha técnica y objetivos de aprendizaje detallados.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="grid-simuladores">
+                        <!-- Generado dinámicamente -->
+                    </div>
+                </section>
+
+                <!-- REALIDAD VIRTUAL EN MEDICINA -->
+                <section id="realidad-virtual" class="bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 text-white rounded-3xl p-8 sm:p-14 shadow-2xl border border-slate-800 relative overflow-hidden">
+                    <div class="absolute -right-10 -bottom-10 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl"></div>
+                    <div class="max-w-3xl mx-auto text-center relative z-10">
+                        <span class="bg-cyan-500/10 text-cyan-400 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider border border-cyan-500/30 inline-block mb-4">
+                            <i class="fa-solid fa-microchip"></i> Vanguardia Tecnológica
+                        </span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Simuladores de Realidad Virtual (RV) en Medicina</h2>
+                        <p class="mt-4 text-slate-300 leading-relaxed text-base font-light">
+                            La integración de entornos inmersivos representa la frontera más avanzada en la educación médica de la UDES, permitiendo interactuar con modelos tridimensionales complejos sin limitantes físicas.
+                        </p>
+                    </div>
+
+                    <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+                        <div class="bg-slate-900/60 backdrop-blur-md p-8 rounded-2xl border border-slate-800 hover:border-cyan-500/40 transition duration-300">
+                            <div class="text-cyan-400 text-3xl mb-4"><i class="fa-solid fa-vr-cardboard"></i></div>
+                            <h3 class="text-xl font-bold text-white">Laparoscopia y Colecistectomía Virtual</h3>
+                            <p class="mt-3 text-sm text-slate-300 leading-relaxed">
+                                Entorno interactivo de RV para entrenar cirugías mínimamente invasivas. Ofrece métricas en tiempo real sobre tiempo operatorio, precisión de corte y conservación de tejidos.
+                            </p>
+                        </div>
+                        <div class="bg-slate-900/60 backdrop-blur-md p-8 rounded-2xl border border-slate-800 hover:border-cyan-500/40 transition duration-300">
+                            <div class="text-cyan-400 text-3xl mb-4"><i class="fa-solid fa-brain"></i></div>
+                            <h3 class="text-xl font-bold">Anatomía Humana 3D Volumétrica</h3>
+                            <p class="mt-3 text-sm text-slate-300 leading-relaxed">
+                                Modelos anatómicos de alta fidelidad que permiten disecciones virtuales por capas, aislamiento de sistemas orgánicos y visualización hemodinámica avanzada.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- UBICACIÓN UDES CÚCUTA -->
+                <section id="ubicacion" class="bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 p-8 sm:p-12">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                        <div class="space-y-6">
+                            <span class="bg-indigo-50 text-indigo-600 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider border border-indigo-100 inline-block">
+                                <i class="fa-solid fa-compass"></i> Sede Institucional
+                            </span>
+                            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Ubicación - UDES Campus Cúcuta</h2>
+                            <p class="text-slate-600 leading-relaxed">
+                                Los laboratorios de simulación clínica y el programa de Medicina operan en el campus principal de la Universidad de Santander en Cúcuta. Un espacio dotado con infraestructura moderna diseñada para garantizar el más alto nivel de aprendizaje práctico.
+                            </p>
+                            <ul class="space-y-3 text-sm text-slate-700 font-medium">
+                                <li class="flex items-center gap-3"><div class="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-600"><i class="fa-solid fa-location-dot"></i></div> Cúcuta, Norte de Santander, Colombia</li>
+                                <li class="flex items-center gap-3"><div class="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-600"><i class="fa-solid fa-building-columns"></i></div> Facultad de Ciencias Médicas y de la Salud</li>
+                                <li class="flex items-center gap-3"><div class="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-600"><i class="fa-solid fa-door-open"></i></div> Centro de Simulación Especializada</li>
+                            </ul>
+                        </div>
+                        <a href="https://maps.app.goo.gl/UxQkMNr7Nb4X4mf89" target="_blank" rel="noopener noreferrer" class="group bg-slate-900 h-80 rounded-2xl relative overflow-hidden shadow-lg block border border-slate-800">
+                            <div class="absolute inset-0 bg-cover bg-center opacity-60 group-hover:scale-105 transition duration-500" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80')"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+                            <div class="absolute inset-0 p-8 flex flex-col justify-end text-white z-10">
+                                <div class="w-12 h-12 bg-cyan-500 text-slate-950 rounded-xl flex items-center justify-center font-bold text-xl mb-3 shadow-lg shadow-cyan-500/30 group-hover:scale-110 transition">
+                                    <i class="fa-solid fa-map-pin"></i>
+                                </div>
+                                <h3 class="font-bold text-xl">Campus UDES Cúcuta</h3>
+                                <p class="text-xs text-cyan-400 mt-1 font-semibold flex items-center gap-1.5 underline">
+                                    Ver ubicación exacta en Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- CLASIFICACIÓN DE FIDELIDAD -->
+                <section id="categorias" class="bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 p-8 sm:p-12">
+                    <div class="text-center max-w-2xl mx-auto mb-10">
+                        <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Grados de Realismo en la Simulación</h2>
+                        <p class="text-slate-500 mt-2 text-sm">Escala taxonómica aplicada al entrenamiento clínico.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200/80 hover:border-cyan-500/50 transition">
+                            <span class="text-cyan-600 font-extrabold text-xs uppercase tracking-widest bg-cyan-50 px-3 py-1 rounded-full border border-cyan-100">Nivel 1</span>
+                            <h3 class="text-xl font-bold text-slate-900 mt-4">Baja Fidelidad</h3>
+                            <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+                                Simuladores estáticos o de partes anatómicas aisladas enfocados en entrenar procedimientos específicos como venopunción, suturas o exploración básica.
+                            </p>
+                        </div>
+                        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200/80 hover:border-cyan-500/50 transition">
+                            <span class="text-cyan-600 font-extrabold text-xs uppercase tracking-widest bg-cyan-50 px-3 py-1 rounded-full border border-cyan-100">Nivel 2</span>
+                            <h3 class="text-xl font-bold text-slate-900 mt-4">Fidelidad Media</h3>
+                            <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+                                Sistemas que integran respuestas programables y sonidos clínicos reales, tal como maniquíes de auscultación cardiorrespiratoria y respuesta semiológica.
+                            </p>
+                        </div>
+                        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200/80 hover:border-cyan-500/50 transition">
+                            <span class="text-cyan-600 font-extrabold text-xs uppercase tracking-widest bg-cyan-50 px-3 py-1 rounded-full border border-cyan-100">Nivel 3</span>
+                            <h3 class="text-xl font-bold text-slate-900 mt-4">Alta Fidelidad</h3>
+                            <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+                                Maniquíes robóticos antropomórficos completos con control fisiológico dinámico, capaces de simular paros, parto, intubación y respuesta farmacológica crítica.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ENCUESTA DE SATISFACCIÓN -->
+                <section id="encuesta" class="bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-900 text-white rounded-3xl p-8 sm:p-14 shadow-2xl border border-slate-800">
+                    <div class="max-w-2xl mx-auto">
+                        <div class="text-center">
+                            <span class="bg-cyan-500/10 text-cyan-400 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider border border-cyan-500/30">
+                                <i class="fa-solid fa-comment-dots"></i> Retroalimentación
+                            </span>
+                            <h2 class="text-2xl sm:text-3xl font-extrabold mt-4 tracking-tight">Encuesta de Satisfacción Académica</h2>
+                            <p class="text-slate-300 text-sm mt-2">
+                                Valora la utilidad de la visita y la experiencia con los equipos tecnológicos de la UDES.
+                            </p>
+                        </div>
+
+                        <form id="satisfactionForm" class="mt-10 space-y-6 bg-slate-900/80 backdrop-blur-md p-8 rounded-2xl border border-slate-800 shadow-xl">
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Nombre completo (Opcional)</label>
+                                <input type="text" id="nombreUsuario" placeholder="Ej. Miguel Pacheco" class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition text-sm">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">¿Cómo calificarías la utilidad de los simuladores en tu formación?</label>
+                                <select id="calificacionUtilidad" class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white focus:outline-none focus:border-cyan-500 transition text-sm">
+                                    <option value="Excelente" class="bg-slate-900">Excelente - Indispensable para el aprendizaje clínico</option>
+                                    <option value="Muy Buena" class="bg-slate-900">Muy Buena - Aporta gran valor práctico</option>
+                                    <option value="Buena" class="bg-slate-900">Buena - Complementa adecuadamente la teoría</option>
+                                    <option value="Regular" class="bg-slate-900">Regular - Requiere mayor integración</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">¿Cuál simulador te pareció más impactante?</label>
+                                <input type="text" id="simuladorFavorito" placeholder="Ej. HAL (Gaumard) o Dr. ET" class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition text-sm">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Comentarios y conclusiones personales</label>
+                                <textarea id="comentarios" rows="3" placeholder="Comparte tus impresiones sobre el laboratorio..." class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition text-sm"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-slate-950 font-bold py-3.5 px-6 rounded-xl shadow-lg shadow-cyan-500/20 transition duration-200 flex items-center justify-center gap-2 text-sm uppercase tracking-wider">
+                                <i class="fa-solid fa-paper-plane"></i> Enviar Evaluación
+                            </button>
+
+                            <div id="mensajeExito" class="hidden text-center text-cyan-300 font-medium text-xs bg-cyan-950/80 p-4 rounded-xl border border-cyan-500/30">
+                                ¡Gracias por completar la encuesta! Sus respuestas han sido registradas exitosamente.
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- Reflexión y Conclusiones -->
+                <section id="reflexion" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-slate-900 text-white rounded-3xl p-8 sm:p-10 flex flex-col justify-between border border-slate-800">
+                        <div>
+                            <span class="text-cyan-400 text-xs font-bold uppercase tracking-widest block mb-2"><i class="fa-solid fa-lightbulb"></i> Desarrollo Profesional</span>
+                            <h2 class="text-2xl font-bold mb-4">Aprendizaje Personal</h2>
+                            <p class="text-slate-300 text-sm leading-relaxed font-light">
+                                La vivencia en el laboratorio permitió afianzar el criterio clínico, comprendiendo que el error dentro de un entorno simulado es la herramienta pedagógica más potente para cimentar una práctica médica segura y humana.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-6 border-t border-slate-800 text-xs text-slate-400 font-medium">
+                            Facultad de Medicina • UDES Cúcuta
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 p-8 sm:p-10 flex flex-col justify-between">
+                        <div>
+                            <span class="text-indigo-600 text-xs font-bold uppercase tracking-widest block mb-2"><i class="fa-solid fa-square-poll-vertical"></i> Síntesis General</span>
+                            <h2 class="text-2xl font-bold text-slate-900 mb-4">Conclusiones</h2>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                La simulación clínica de alta fidelidad constituye un pilar insustituible para la adquisición temprana de habilidades psicomotoras y trabajo en equipo interdisciplinario, elevando los estándares de calidad de la institución.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-6 border-t border-slate-100 text-xs text-slate-400 font-medium">
+                            Informe de Práctica Académica (2026)
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+
+        <!-- VISTA DE DETALLE DEL SIMULADOR (Subpágina dinámica) -->
+        <div id="view-subpage" class="hidden max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <button onclick="volverAlInicio()" class="mb-8 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-indigo-600 hover:text-indigo-800 bg-white border border-slate-200 px-5 py-2.5 rounded-xl shadow-sm transition">
+                <i class="fa-solid fa-arrow-left"></i> Volver al Catálogo Principal
+            </button>
+            <div id="subpage-content" class="bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 p-8 sm:p-12 space-y-10">
+                <!-- Generado dinámicamente -->
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer Institucional -->
+    <footer class="bg-slate-950 text-slate-400 py-12 mt-20 border-t border-slate-800/80 text-center text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-3">
+            <p class="font-bold text-white text-sm">Universidad de Santander (UDES)</p>
+            <p class="text-slate-500">Programa de Medicina • Campus Cúcuta • Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <!-- Script JavaScript interactivo -->
+    <script>
+        const simuladoresData = [
+            {
+                id: 1,
+                nombre: "1. Dr. ET EndoTrainer",
+                laboratorio: "Laboratorio de Laparoscopia",
+                imagen: "https://imgs.search.brave.com/BRFPzB0yNuGjh8Cy0yzvYcqe0WD47cHL-OQLEtURGLI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFvYW1IMHR0REwu/anBn",
+                badge: "Hecho en Colombia",
+                badgeColor: "bg-slate-900 text-white",
+                descripcionBreve: "Simulador a escala real que reproduce una cirugía laparoscópica, permitiendo practicar el manejo de instrumentos y situaciones reales del quirófano.",
+                detallesCompletos: "El simulador Dr. ET es un dispositivo de fabricación nacional diseñado específicamente para el entrenamiento quirúrgico básico y avanzado en laparoscopia. Permite a los estudiantes de medicina familiarizarse con la visión indirecta a través de cámaras, el manejo de pinzas de disección, tijeras y trocares, reproduciendo la ergonomía de un quirófano real sin poner en riesgo la integridad de los pacientes.",
+                objetivos: ["Manejo instrumental laparoscópico", "Coordinación ojo-mano con monitor", "Destreza en espacios cerrados simulados"],
+                videoYoutube: "https://www.youtube.com/watch?v=88IxT_H78aE"
+            },
+            {
+                id: 2,
+                nombre: "2. Cystoscopy and Ureteroscopy Trainer",
+                laboratorio: "Entrenamiento Quirúrgico",
+                imagen: "https://imgs.search.brave.com/hRBOGaUf2qq2ggY5A8bJ6HTzhrYcE2uSRH7lniZ6EXM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Z3RzaW11bGF0b3Jz/LmNvbS9jZG4vc2hv/cC9wcm9kdWN0cy9o/eXN0ZXJvc2NvcHkt/YW5kLXJlc2VjdG9z/Y29weS1zdXJnaWNh/bC1zaW11bGF0b3It/ZXR4eS1oeXN0ZXJv/LTY3ODI2N18yMzB4/LmpwZz92PTE2NzEy/MjM3MDQ",
+                badge: "Urología / Quirófano",
+                badgeColor: "bg-indigo-600 text-white",
+                descripcionBreve: "Reproduce con precisión la anatomía y condiciones del abdomen humano, permitiendo practicar la colocación de instrumentos y manejo de la cámara.",
+                detallesCompletos: "Este simulador especializado facilita el entrenamiento en procedimientos urológicos endoscópicos. Los estudiantes pueden practicar la introducción de endoscopios, la exploración de vías urinarias y la resolución de situaciones simuladas propias de la práctica urológica con alta fidelidad anatómica.",
+                objetivos: ["Exploración endoscópica segura", "Reconocimiento de estructuras urológicas", "Dominio de óptica quirúrgica"],
+                videoYoutube: "https://www.youtube.com/watch?v=jXi4uV3ddyM"
+            },
+            {
+                id: 3,
+                nombre: "3. Simuladores Digitales de Ojos y Oídos",
+                laboratorio: "Laboratorio de Semiología",
+                imagen: "https://imgs.search.brave.com/Jc2ptOrYyDdtL12oPKyh_VrJJVL4RgIMHp-NO-JkRZM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tb3Jl/dGhhbnNpbXVsYXRv/cnMuY29tL3dwLWNv/bnRlbnQvdXBsb2Fk/cy8yMDIxLzA1LzI4/MjQtMzAweDIwMC5q/cGc",
+                badge: "Semiología Sensorial",
+                badgeColor: "bg-emerald-600 text-white",
+                descripcionBreve: "Diseñados exclusivamente para practicar el examen de ojos y oídos usando el oftalmoscopio y el otoscopio para identificar estructuras y patologías.",
+                detallesCompletos: "Herramientas de entrenamiento clínico enfocadas en la exploración física de órganos de los sentidos. Permiten al estudiante dominar el uso de instrumentos delicados como el otoscopio y el oftalmoscopio directo, facilitando la detección de alteraciones en la membrana timpánica o en el fondo de ojo.",
+                objetivos: ["Manejo correcto del oftalmoscopio", "Inspección otoscópica diagnóstica", "Identificación patológica temprana"],
+                videoYoutube: "https://www.youtube.com/watch?v=YJmA9d0-9GU"
+            },
+            {
+                id: 4,
+                nombre: "4. SAM Basic - Adult Auscultation Manikin",
+                laboratorio: "Laboratorio de Semiología",
+                imagen: "https://imgs.search.brave.com/uJqNxM0XyBiPv0_Beq6W5NZxvtzhq1s_3TmmLEKET4s/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jb3lp/dG9zbXguY29tL2Nk/bi9zaG9wL2ZpbGVz/LzVDQzM4Q0JBLTNF/RTctNDkyQy04QTM5/LTg4RTM3Mjk5QTYw/NF81MDB4QDJ4Lmpw/Zz92PTE3MTEyNjEx/MzM",
+                badge: "Cardionics",
+                badgeColor: "bg-indigo-600 text-white",
+                descripcionBreve: "Diseñado para la enseñanza de la auscultación cardíaca y pulmonar. Permite escuchar ruidos normales y patológicos del corazón y pulmones.",
+                detallesCompletos: "El maniquí SAM Basic cuenta con tecnología de audio integrada que reproduce una amplia gama de sonidos cardíacos y respiratorios normales y patológicos (soplos, arritmias, frotes pleurales, estertores). Es clave para agudizar el sentido auditivo del futuro médico antes de su contacto con pacientes reales.",
+                objetivos: ["Diferenciación de focos auscultatorios", "Reconocimiento de soplos y arritmias", "Correlación semiológica clínica"],
+                videoYoutube: "https://www.youtube.com/watch?v=jTkyOEAObbA"
+            },
+            {
+                id: 5,
+                nombre: "5. HAL (Gaumard)",
+                laboratorio: "Cuidados Críticos y Urgencias",
+                imagen: "https://imgs.search.brave.com/pDYy9AthmxFsBCj-L9xJxuaSODp9DGfBRSZTNpicVTQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9nYXVt/YXJkLm1vZ2lnbGFz/cy5jb20uYnIvd3At/Y29udGVudC91cGxv/YWRzLzIwMTkvMDQv/aGFsX3MzMDAwLWJh/bm5lci5qcGc",
+                badge: "Alta Fidelidad",
+                badgeColor: "bg-rose-600 text-white",
+                descripcionBreve: "Simulador de alta fidelidad que reproduce signos vitales en tiempo real, respiración, pulso y respuestas a fármacos para escenarios de emergencia.",
+                detallesCompletos: "HAL es un maniquí robótico avanzado controlado por software. Simula respuestas fisiológicas dinámicas como cambios en la presión arterial, frecuencia cardíaca, saturación y reactividad pupilar. Se utiliza para entrenar equipos médicos en la toma de decisiones bajo presión extrema y liderazgo en urgencias.",
+                objetivos: ["Manejo avanzado de pacientes críticos", "Trabajo en equipo y liderazgo", "Respuesta a intervenciones farmacológicas"],
+                videoYoutube: "https://www.youtube.com/watch?v=9wFk8nj9APc"
+            },
+            {
+                id: 6,
+                nombre: "6. Noelle con Pedi Blue Neonate",
+                laboratorio: "Laboratorio de Obstetricia",
+                imagen: "https://imgs.search.brave.com/nINPpNVFMsQyF2fiOu7HUIOZqJpaIO78jzG8q1nU4u0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bWVudG9uZS1lZHVj/YXRpb25hbC5jb20u/YXUvYXNzZXRzL3Ro/dW1iTC9TQjM3NzEz/LmpwZz8yMDI0MDIw/NTEyNDE1Mg",
+                badge: "Obstetricia",
+                badgeColor: "bg-purple-600 text-white",
+                descripcionBreve: "Orientado a obstetricia y neonatología. Permite recrear partos normales y complicados, así como maniobras de reanimación neonatal.",
+                detallesCompletos: "Sistema completo para la simulación obstétrica y perinatal. Permite practicar la atención de partos eutócicos y distócicos, manejo de hemorragias postparto, distocias de hombros y la evaluación inmediata del recién neonato con el maniquí Pedi Blue.",
+                objetivos: ["Atención de partos y emergencias perinatales", "Maniobras obstétricas de salvamento", "Reanimación neonatal inmediata"],
+                videoYoutube: "https://www.youtube.com/watch?v=waqKx8liQi0"
+            },
+            {
+                id: 7,
+                nombre: "7. Life-Form Advanced 'Airway Larry'",
+                laboratorio: "Laboratorio de Emergencias",
+                imagen: "https://www.aedsuperstore.com/thumbnail.asp?file=assets/images/LF03684U.jpg&maxx=500&maxy=0",
+                badge: "Vía Aérea / RCP",
+                badgeColor: "bg-amber-600 text-white",
+                descripcionBreve: "Combina manejo de vía aérea con funciones de desfibrilación, simulación de ECG y práctica con DEA con gran realismo anatómico.",
+                detallesCompletos: "Airway Larry es un torso anatómico especializado en soporte vital básico y avanzado. Permite intubación endotraqueal, ventilación con bolsa-válvula-mascarilla, aspiración de secreciones y entrenamiento en desfibrilación cardíaca sincronizada y uso de DEA.",
+                objetivos: ["Intubación y manejo avanzado de vía aérea", "Desfibrilación y soporte vital avanzado", "Protocolos de reanimación cardiopulmonar (RCP)"],
+                videoYoutube: "https://www.youtube.com/shorts/jCBVWdcdp1I"
+            }
+        ];
+
+        function renderGrid() {
+            const grid = document.getElementById('grid-simuladores');
+            grid.innerHTML = simuladoresData.map(sim => `
+                <div class="bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 overflow-hidden flex flex-col justify-between hover:-translate-y-1 transition-all duration-300">
+                    <div>
+                        <div class="h-52 bg-slate-50 overflow-hidden relative flex items-center justify-center p-6 border-b border-slate-100">
+                            <img src="${sim.imagen}" alt="${sim.nombre}" class="max-h-full max-w-full object-contain rounded-xl">
+                            <span class="absolute top-4 right-4 ${sim.badgeColor} text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-widest shadow-sm">${sim.badge}</span>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-lg font-bold text-slate-900 tracking-tight">${sim.nombre}</h3>
+                            <p class="mt-3 text-sm text-slate-600 leading-relaxed font-light">
+                                ${sim.descripcionBreve}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-8 pb-8 pt-2 flex items-center justify-between border-t border-slate-50">
+                        <span class="text-xs font-medium text-slate-400"><i class="fa-solid fa-microscope text-indigo-500 mr-1"></i> ${sim.laboratorio}</span>
+                        <button onclick="verSubpagina(${sim.id})" class="text-xs font-bold uppercase tracking-wider bg-indigo-50 text-indigo-600 hover:bg-indigo-600 hover:text-white px-4 py-2.5 rounded-xl transition duration-200 flex items-center gap-1.5 shadow-sm">
+                            Inf. del Simulador <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function verSubpagina(id) {
+            const sim = simuladoresData.find(s => s.id === id);
+            if (!sim) return;
+
+            document.getElementById('view-home').classList.add('hidden');
+            document.getElementById('view-subpage').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            const content = document.getElementById('subpage-content');
+            content.innerHTML = `
+                <div class="flex flex-col md:flex-row gap-10 items-center border-b border-slate-100 pb-10">
+                    <div class="w-full md:w-1/2 h-80 bg-slate-50 rounded-2xl p-6 flex items-center justify-center border border-slate-100 shadow-inner">
+                        <img src="${sim.imagen}" alt="${sim.nombre}" class="max-h-full max-w-full object-contain rounded-xl shadow">
+                    </div>
+                    <div class="w-full md:w-1/2 space-y-4">
+                        <span class="bg-indigo-50 text-indigo-700 text-xs font-extrabold px-3.5 py-1.5 rounded-full uppercase tracking-wider border border-indigo-100 inline-block">${sim.laboratorio}</span>
+                        <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">${sim.nombre}</h1>
+                        <p class="text-slate-600 leading-relaxed text-base font-light">${sim.detallesCompletos}</p>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <h3 class="text-xl font-extrabold text-slate-900 flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-600"><i class="fa-solid fa-bullseye"></i></div> Objetivos de Aprendizaje Clave
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        ${sim.objetivos.map(obj => `
+                            <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 text-sm font-semibold text-slate-700 flex items-center gap-3 shadow-sm">
+                                <i class="fa-solid fa-circle-check text-cyan-500 text-lg"></i> ${obj}
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+
+                <!-- CUADRO INTERACTIVO DE VIDEO EN YOUTUBE -->
+                <div class="space-y-4">
+                    <h3 class="text-xl font-extrabold text-slate-900 flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-red-50 flex items-center justify-center text-red-600"><i class="fa-brands fa-youtube"></i></div> Video Explicativo en YouTube
+                    </h3>
+                    <a href="${sim.videoYoutube}" target="_blank" rel="noopener noreferrer" class="group bg-gradient-to-br from-slate-900 to-slate-950 p-6 rounded-2xl border border-slate-800 flex items-center justify-between shadow-lg hover:border-red-500/50 transition duration-300 block">
+                        <div class="flex items-center gap-5">
+                            <div class="w-16 h-12 bg-red-600 text-white rounded-xl flex items-center justify-center text-2xl shadow-md group-hover:scale-105 transition">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base group-hover:text-red-400 transition">Ver demostración y explicación del simulador</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">Haz clic para abrir el video explicativo en YouTube</p>
+                            </div>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-300 group-hover:bg-red-600 group-hover:text-white transition">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="bg-gradient-to-r from-slate-950 to-indigo-950 text-white p-8 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl border border-slate-800">
+                    <div>
+                        <h4 class="font-bold text-lg">¿Desea evaluar su experiencia con este equipo?</h4>
+                        <p class="text-xs text-slate-400 mt-1">Sus comentarios son fundamentales para el informe institucional.</p>
+                    </div>
+                    <a href="#encuesta" onclick="volverAlInicio();" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-extrabold px-6 py-3 rounded-xl text-xs uppercase tracking-wider shadow-lg transition whitespace-nowrap">
+                        Ir a la Encuesta
+                    </a>
+                </div>
+            `;
+        }
+
+        function volverAlInicio() {
+            document.getElementById('view-subpage').classList.add('hidden');
+            document.getElementById('view-home').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        document.getElementById('satisfactionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const mensaje = document.getElementById('mensajeExito');
+            mensaje.classList.remove('hidden');
+            this.reset();
+            setTimeout(() => {
+                mensaje.classList.add('hidden');
+            }, 5000);
+        });
+
+        // Inicializar catálogo
+        renderGrid();
+    </script>
+
+</body>
+</html>
